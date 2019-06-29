@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="styles.css"/>
+        <title>LC101 User-Signup</title>
+    </head>
+
+    <body>
+        <h1>Signup</h1>
+        <h4>If your information is not valid, the form will be rejected.</h4>
+        <h4>Valid usernames and passwords have 3 to 20 characters with no spaces.</h4>
+        <h4>Valid (optional) email addresses contain one @ symbol, no spaces, one period '.', no spaces, and between 3 & 20 characters</h4>
+        <br>
+        <form method="post">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="username">Username</label>
+                        </td>
+                        <td>
+                            <input name="username" type="text" value="" />
+                            <span class="error"> {username_error} </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="password">Password</label>
+                        </td>
+                        <td>
+                            <input name="password" type="password">
+                            <span class="error"> {{password_error}} </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="verify" type="text">Verify Password</label>
+                        </td>
+                        <td>
+                            <input name="verify" type="password">
+                            <span class="error">{{verify_error}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="email">Email (optional)</label>
+                        </td>
+                        <td>
+                            <input name="email" type="text" value="">
+                            <span class="error">{{email_error}}</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <input type="submit" value="Submit Query">
+        </form>
+    </body>
+</html>
