@@ -46,8 +46,10 @@ def validation():
     email_error = ""
 
     if  len(email) > 0:
-        if :
-            email_error = "Email is option, but this is not a valid email"
+        if email.count('@') != 1:
+            email_error = "Multiple @ symbols is invalid."
+        elif email.count(".") != 1:
+            email_error = "Invalid email, please try again."
         elif len(email) < 3 or len(email) > 20:
             email_error = "Email length is not valid, please remove if you do not have a valid email."
         else:
@@ -56,7 +58,7 @@ def validation():
     if not username_error and not password_error and not email_error and not verify_error:
         return render_template("welcome.html", username=username)
     else:
-            return render_template("index.html", username_error = username_error, password_error = password_error, email_error = email_error, verify_error = verify_error, username = username)
+            return render_template("index.html", username_error = username_error, password_error = password_error, email_error = email_error, verify_error = verify_error, username = username, email=email)
 
 @app.route("/welcome")
 def welcome():
